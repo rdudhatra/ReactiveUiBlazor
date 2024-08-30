@@ -1,0 +1,30 @@
+﻿@page "/dashboard"
+@inject UserViewModel ViewModel
+@inject NavigationManager Navigation
+
+<h3>Dashboard</h3>
+
+@if (ViewModel == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <p>Welcome, @ViewModel.Username</p>
+    <button @onclick="LogoutUser">Logout</button>
+
+}
+
+@code {
+    private void LogoutUser()
+    {
+        // Call the logout method from ViewModel
+        ViewModel.Logout();
+        // Navigate back to the login page
+        Navigation.NavigateTo("/login");
+    }
+}
+
+
+
+

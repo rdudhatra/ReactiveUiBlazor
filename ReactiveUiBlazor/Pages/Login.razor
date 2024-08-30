@@ -1,0 +1,82 @@
+﻿@* @page "/login"
+@inject NavigationManager Navigation
+@inject UserViewModel ViewModel
+
+<EditForm Model="@ViewModel" OnValidSubmit="@OnSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Username:</label>
+        <InputText @bind-Value="ViewModel.Username" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="ViewModel.Password" type="password" />
+    </div>
+    <button type="submit">Login</button>
+</EditForm>
+
+@code {
+    private void OnSubmit()
+    {
+        // Validate user credentials
+        if (ViewModel.ValidateUser(ViewModel.Username, ViewModel.Password))
+        {
+            // User is valid, navigate to dashboard
+            Navigation.NavigateTo("/dashboard");
+        }
+        else
+        {
+            // Handle invalid login, e.g., show an error message
+            Console.WriteLine("Invalid username or password");
+        }
+    }
+}
+ *@
+
+
+
+ @page "/login"
+@inject NavigationManager Navigation
+@inject UserViewModel ViewModel
+
+<EditForm Model="@ViewModel" OnValidSubmit="@OnSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Username:</label>
+        <InputText @bind-Value="ViewModel.Username" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="ViewModel.Password" type="password" />
+    </div>
+    <button type="submit">Login</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <p style="color: red;">@_errorMessage</p>
+}
+
+@code {
+    private string _errorMessage = string.Empty;
+
+    private void OnSubmit()
+    {
+        // Attempt to log in
+        if (ViewModel.Login(ViewModel.Username, ViewModel.Password))
+        {
+            // User is valid, navigate to dashboard
+            Navigation.NavigateTo("/dashboard");
+        }
+        else
+        {
+            // Handle invalid login
+            _errorMessage = "Invalid username or password";
+        }
+    }
+}
+

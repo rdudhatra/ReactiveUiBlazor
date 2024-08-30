@@ -1,0 +1,177 @@
+﻿@code {
+    bool sidebar1Expanded = true;
+}
+
+<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu">
+
+    <!-- LOGO -->
+    <div class="navbar-brand-box">
+        <a href="/" class="logo logo-dark">
+            <span class="logo-sm">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+                <img src="/assets/images/logo-dark.png" alt="" height="20">
+            </span>
+        </a>
+
+        <a href="/" class="logo logo-light">
+            <span class="logo-sm">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
+            </span>
+            <span class="logo-lg">
+                <img src="/assets/images/logo-light.png" alt="" height="20">
+            </span>
+        </a>
+    </div>
+
+    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+        <i class="fa fa-fw fa-bars"></i>
+    </button>
+
+    <div data-simplebar class="sidebar-menu-scroll">
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title">Menu</li>
+
+                @*<RadzenPanelMenu Multiple="@multiple">
+                <RadzenPanelMenuItem Text="Dashboard" Path="/" Icon="home" />
+
+                <RadzenPanelMenuItem Text="Master" Icon="tab">
+                <RadzenPanelMenuItem Text="Design" Path="/master/designs" Icon="perm_media" />
+                <RadzenPanelMenuItem Text="Parties" Path="/master/parties" Icon="account_circle" />
+                </RadzenPanelMenuItem>
+                </RadzenPanelMenu>
+                *@
+
+                <li>
+                    <a href="/">
+                        <i class="uil-home-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-title">Master</li>
+
+                <li>
+                    <a href="/master/batch/Index" class="waves-effect">
+                        <i class="uil-layer-group"></i>
+                        <span>Batch</span>
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="/master/employee/index" class="waves-effect">
+                        <i class="uil-users-alt"></i>
+                        <span>Employee</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/enrollment" class="waves-effect">
+                        <i class="uil uil-user-plus"></i>
+                        <span>Enrollnment</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-books"></i>
+                        <span>Courses</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="/master/Course/index" class="waves-effect">
+                                <i class="uil-book-open"></i>
+                                <span>Course</span>
+                             </a>
+                        </li>
+                        <li>
+                            <a href="/master/course-exam/index" class="waves-effect">
+                                <i class="uil-clipboard-notes"></i>
+                                <span>CourseExam</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/master/coursefee/index" class="waves-effect">
+                                <i class="uil-dollar-sign"></i>
+                                <span>CourseFee</span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="/master/coursesyllabus/index" class="waves-effect">
+                                <i class="uil-file-alt"></i>
+                                <span>CourseSyllabus</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Students</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                      
+                        <li>
+                            <a href="/master/assessment/index" class="waves-effect">
+                                <i class="fas fa-clipboard"></i>
+                                <span>Student Assessment</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/master/studentattendance/index" class="waves-effect">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Student Attendance</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/master/studentinstallment/index" class="waves-effect">
+                                      <i class="fas fa-money-check-alt"></i>
+                                      <span>Student Installment</span>
+                                </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="uil-envelope"></i>
+                        <span>Inquiries</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                     
+                        <li>
+                            <a href="/master/inquiry/index" class="waves-effect">
+                                <i class="uil-question-circle"></i>
+                                <span>Inquiry</span>
+                            </a>
+                        </li>
+                      
+                         <li>
+                            <a href="/master/inquiryfollowup/index" class="waves-effect">
+                                <i class="uil-check-circle"></i>
+                                <span>Inquiry followup</span>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+            
+                
+
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+@code {
+    bool multiple = true; 
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-MYSP4VQ/BL4GtCK7JhH/4Q4ZIK7t5rj5+6u0HldRfgrF+e3+UOG/UHQ4gLeU9bgyMjCRDw4kM3Rq9y2X9NvEjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+

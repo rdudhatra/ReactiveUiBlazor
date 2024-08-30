@@ -1,0 +1,15 @@
+﻿@page "/logout"
+@inject NavigationManager Navigation
+@inject UserViewModel ViewModel
+
+<h3>Logout</h3>
+
+<button @onclick="OnLogout">Logout</button>
+
+@code {
+    private void OnLogout()
+    {
+        ViewModel.Logout();
+        Navigation.NavigateTo("/login");
+    }
+}
