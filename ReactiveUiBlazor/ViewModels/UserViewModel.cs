@@ -19,7 +19,7 @@ public class UserViewModel : ReactiveObject
         get => _password;
         set => this.RaiseAndSetIfChanged(ref _password, value);
     }
-
+     
     private bool _isLoggedIn;
     public bool IsLoggedIn
     {
